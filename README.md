@@ -14,19 +14,21 @@ After you install the package, just use in your application:
   import autoSeed from "@orbe/mongoose-auto-seed";
   import seederOne from "../seederOne";
 
-  autoSeed.setup([
+  await autoSeed.startup([
     seederOne
   ]);
-
-  await autoSeed.startup();
 ```
 
 ```ts
   /** seederOne file */
   import Schema from "../Schema";
+  
+  export const title = "seeder-one";
 
-  /** await Schema.create(...) */
-  /** ... */
+  export const start = () => {
+    /** await Schema.create(...) */
+    /** ... */
+  }
 ```
 
 
