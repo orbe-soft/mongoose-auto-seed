@@ -1,0 +1,7 @@
+node_modules 
+coverage
+junit.xml
+.docz
+.env
+.env.test
+dist
