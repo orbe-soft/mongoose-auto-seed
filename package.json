@@ -1,11 +1,15 @@
 {
   "name": "mongoose-auto-seed",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "repository": "git@github.com:orbe-soft/mongoose-auto-seed.git",
   "author": "lucassouzamatos <lucas.ssouza.mmatos@gmail.com>",
   "scripts": {
-    "test": "jest --runInBand ./test"
+    "test": "jest --runInBand --detectOpenHandles --forceExit"
   },
   "license": "MIT",
     "devDependencies": {

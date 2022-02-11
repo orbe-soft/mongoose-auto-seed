@@ -5,7 +5,7 @@ interface IMetadata extends Document {
   timestamp: number;
 }
 
-const metadataSchema = new mongoose.Schema({
+const metadataSchema = new mongoose.Schema<IMetadata>({
   title: {
     type: String
   },
@@ -14,9 +14,9 @@ const metadataSchema = new mongoose.Schema({
   }
 });
 
-const Metadata: Model<IMetadata> = mongoose.model("Metadata", metadataSchema);
+export const Metadata: Model<IMetadata> = mongoose.model("Metadata", metadataSchema);
 
-interface File {
+export interface File {
   title: string;
   start: () => Promise<void>;
 }
