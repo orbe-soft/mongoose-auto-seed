@@ -61,5 +61,5 @@ describe("Seed test", () => {
 
     expect(spy).toHaveBeenCalled();
     done();
-  }, 9000);
+  });
 });
