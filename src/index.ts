@@ -1,36 +1,16 @@
-import mongoose, { Document, Model } from "mongoose";
-
-interface IMetadata extends Document {
-  title: string;
-  timestamp: number;
-}
-
-const metadataSchema = new mongoose.Schema<IMetadata>({
-  title: {
-    type: String
-  },
-  timestamp: {
-    type: Number
-  }
-});
-
-export const Metadata: Model<IMetadata> = mongoose.model("Metadata", metadataSchema);
-
-export interface File {
-  title: string;
-  start: () => Promise<void>;
-}
+import { Seeder } from "./domain/Seeder";
+import { Metadata } from "./models/Metadata";
 
 /**
  * @description
  * Start the seeders and store the files that can't executed again.
  */
-export const startup = async (files: File[]) => {
-  const queue = files.map(async file => {
-    await file.start();
+export const startup = async (seeders: Seeder[]) => {
+  const queue = seeders.map(async seeder => {
+    await seeder.start();
 
     await Metadata.create({
-      title: file.title,
+      title: seeder.title,
       timestamp: new Date().getTime()
     });
   });
