@@ -14,5 +14,5 @@ const metadataSchema = new mongoose.Schema<IMetadata>({
   }
 });
 
-export const Metadata: Model<IMetadata> = mongoose.model("Metadata", metadataSchema);
+export const Metadata: Model<IMetadata> = mongoose.model("__MetadataSeeder", metadataSchema);
 

@@ -2,7 +2,9 @@ import mongoose from "mongoose";
 
 import { MongoMemoryServer } from "mongodb-memory-server";
 
-import { File, startup } from "..";
+import { Seeder } from "../domain/Seeder";
+
+import { startup } from "..";
 
 export const connect = async () => {
   const mongod = await MongoMemoryServer.create();
@@ -48,16 +50,16 @@ describe("Seed test", () => {
   });
 
   it("should call start one time", async done => {
-    const file: File = {
+    const seeder: Seeder = {
       title: "0527f62bd9",
       start: async () => {
         /** ... */
       }
     };
 
-    const spy = spyOn(file, "start");
+    const spy = spyOn(seeder, "start");
 
-    await startup([file]);
+    await startup([seeder]);
 
     expect(spy).toHaveBeenCalled();
     done();
