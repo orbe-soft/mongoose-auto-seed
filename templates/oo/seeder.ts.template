@@ -1,0 +1,9 @@
+import { Seeder } from "mongoose-automatic-seed";
+
+export default class {@templatename} implements Seeder {
+  title = "{@templatetitle}";
+
+  async start(): Promise<void> {
+    /** @todo */
+  }
+}
