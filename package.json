@@ -1,11 +1,12 @@
 {
   "name": "mongoose-automatic-seed",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": "bin/mongoose-auto-seed",
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "repository": "git@github.com:orbe-soft/mongoose-auto-seed.git",
   "author": "lucassouzamatos <lucas.ssouza.mmatos@gmail.com>",
