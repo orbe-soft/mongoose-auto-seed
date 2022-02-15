@@ -1,6 +1,6 @@
 {
   "name": "mongoose-automatic-seed",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": "bin/mongoose-auto-seed",
