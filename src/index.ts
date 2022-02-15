@@ -17,3 +17,6 @@ export const startup = async (seeders: Seeder[]) => {
 
   await Promise.all(queue);
 };
+
+export { Seeder };
+export { Metadata };

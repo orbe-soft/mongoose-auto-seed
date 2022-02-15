@@ -2,9 +2,7 @@ import mongoose from "mongoose";
 
 import { MongoMemoryServer } from "mongodb-memory-server";
 
-import { Seeder } from "../domain/Seeder";
-
-import { startup } from "..";
+import { startup, Seeder } from "..";
 
 export const connect = async () => {
   const mongod = await MongoMemoryServer.create();
