@@ -14,7 +14,7 @@ export const connect = async () => {
     autoReconnect: true,
     reconnectTries: Number.MAX_VALUE,
     reconnectInterval: 1000,
-    poolSize: 10
+    poolSize: 10,
   };
 
   await mongoose.connect(uri, mongooseOpts);
@@ -47,12 +47,13 @@ describe("Seed test", () => {
     await closeDatabase();
   });
 
-  it("should call start one time", async done => {
+  it("should call start one time", async (done) => {
     const seeder: Seeder = {
       title: "0527f62bd9",
+      unique: true,
       start: async () => {
         /** ... */
-      }
+      },
     };
 
     const spy = spyOn(seeder, "start");
@@ -60,6 +61,24 @@ describe("Seed test", () => {
     await startup([seeder]);
 
     expect(spy).toHaveBeenCalled();
+    done();
+  });
+
+  it("should call start only one time when is unique", async (done) => {
+    const seeder: Seeder = {
+      title: "0527f62bd9",
+      unique: true,
+      start: async () => {
+        /** ... */
+      },
+    };
+
+    const spy = spyOn(seeder, "start");
+
+    await startup([seeder]);
+    await startup([seeder]);
+
+    expect(spy).toHaveBeenCalledTimes(1);
     done();
   });
 });

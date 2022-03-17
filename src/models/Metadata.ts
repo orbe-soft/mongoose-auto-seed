@@ -7,12 +7,14 @@ interface IMetadata extends Document {
 
 const metadataSchema = new mongoose.Schema<IMetadata>({
   title: {
-    type: String
+    type: String,
   },
   timestamp: {
-    type: Number
-  }
+    type: Number,
+  },
 });
 
-export const Metadata: Model<IMetadata> = mongoose.model("__MetadataSeeder", metadataSchema);
-
+export const Metadata: Model<IMetadata> = mongoose.model(
+  "__MetadataSeeder",
+  metadataSchema
+);

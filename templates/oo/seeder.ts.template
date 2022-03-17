@@ -2,6 +2,9 @@ import { Seeder } from "mongoose-automatic-seed";
 
 export default class {@templatename} implements Seeder {
   title = "{@templatetitle}";
+  
+  /** Execute only one time */
+  unique = true;
 
   async start(): Promise<void> {
     /** @todo */
