@@ -1,4 +1,4 @@
-# mongoose-auto-seed
+# mongoose-automatic-seed
 
 [![CI](https://github.com/orbe-soft/mongoose-auto-seed/actions/workflows/automated-tests.yaml/badge.svg)](https://github.com/orbe-soft/mongoose-auto-seed/actions/workflows/automated-tests.yaml)
 
@@ -11,7 +11,7 @@ This is an util for mongoose, that you can execute and create seeders and call i
 After you install the package, just use in your application:
 
 ```ts
-import autoSeed from "@orbe/mongoose-auto-seed";
+import autoSeed from "mongoose-automatic-seed";
 import mySeeder from "mySeeder";
 
 await autoSeed.startup([mySeeder]);
